@@ -1,8 +1,3 @@
-function VerifyChoco {
-    Echo "Checking Chocolatey installation..."
-    Test-Path -Path "$env:ProgramData\Chocolatey" 
-}
-
 function InstallChoco {
     Echo "Installing Chocolatey..."
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -23,9 +18,7 @@ function InstallPackages {
     Pause
 }
 
-$Choco = VerifyChoco
-
-If ($Choco) {
+If (Test-Path -Path "$env:ProgramData\Chocolatey") {
     Echo "Chocolatey already installed!"
     InstallPackages
 } Else {
