@@ -10,7 +10,7 @@ function InstallChoco {
 
 function InstallPackages {
     Echo "Initializing the packages installation..."
-    $Packages = "androidstudio", "brave", "discord", "git", "krita", "nvm", "phpstorm", "postman", "python", "scrcpy", "sublimetext4", "termius", "tixati", "vscode", "webstorm"
+    $Packages = "androidstudio", "brave", "discord", "git", "jdk11", "krita", "laragon", "nvm", "phpstorm", "postman", "python", "scrcpy", "sublimetext4", "termius", "tixati", "vscode", "webstorm"
     ForEach ($PackageName in $Packages) {
         Echo "Installing package: $PackageName"
         Try { 
