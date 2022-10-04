@@ -9,6 +9,7 @@ function InstallPackages {
     $Packages = @(
         "androidstudio",
         "brave",
+        "composer",
         "discord",
         "git",
         "krita",
