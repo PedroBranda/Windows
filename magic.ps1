@@ -5,11 +5,29 @@ function InstallChoco {
 
 function InstallPackages {
     Echo "Initializing the packages installation..."
-    $Packages = "androidstudio", "brave", "discord", "git", "krita", "laragon", "nvm", "openjdk11", "phpstorm", "postman", "python", "scrcpy", "sublimetext4", "termius", "tixati", "vscode", "webstorm"
-    ForEach ($PackageName in $Packages) {
-        Echo "Installing package: $PackageName"
+    $Packages = @(
+        "androidstudio",
+        "brave",
+        "discord",
+        "git",
+        "krita",
+        "laragon",
+        "nvm",
+        "openjdk11",
+        "phpstorm",
+        "postman",
+        "python",
+        "scrcpy",
+        "sublimetext4",
+        "termius",
+        "tixati",
+        "vscode",
+        "webstorm"
+    )
+    ForEach ($Name in $Packages) {
+        Echo "Installing package: $Name"
         Try { 
-            choco install $PackageName -y 
+            choco install $Name -y 
         } Catch {
             Echo "An error occurred."
         }
