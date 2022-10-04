@@ -5,6 +5,7 @@ function InstallChoco {
 
 function InstallPackages {
     Echo "Initializing the packages installation..."
+    # Array with package names to install, to view the packages access: https://community.chocolatey.org/packages
     $Packages = @(
         "androidstudio",
         "brave",
